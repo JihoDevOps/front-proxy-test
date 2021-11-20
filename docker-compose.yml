@@ -1,0 +1,10 @@
+version: "2.4"
+
+services:
+  feproxy:
+    container_name: feproxy
+    build:
+      context: ./
+    restart: always
+    ports:
+      - "8080:8080"
