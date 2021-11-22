@@ -10,6 +10,7 @@ services:
     volumes:
       - /app/node_modules
       - ./root:/app
+      - ./.env.development:/app/.env.development
     ports:
       - "8080:8080"
     stdin_open: true
@@ -24,6 +25,8 @@ services:
     volumes:
       - /app/node_modules
       - ./alpha:/app
+      - ./.env.development:/app/.env.development
+      - ./root/src/components/common:/app/src/components/common
     ports:
       - "8081:8081"
     stdin_open: true
@@ -38,6 +41,8 @@ services:
     volumes:
       - /app/node_modules
       - ./beta:/app
+      - ./.env.development:/app/.env.development
+      - ./root/src/components/common:/app/src/components/common
     ports:
       - "8082:8082"
     stdin_open: true

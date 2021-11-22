@@ -1,12 +1,17 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <a href="/alpha">Alpha</a> |
-    <a href="/beta">Beta</a> |
-    <router-link to="/about">About</router-link>
-  </div>
+  <GNB></GNB>
   <router-view/>
 </template>
+
+<script>
+import GlobalNavigaionBar from "@/components/common/GlobalNavigaionBar.vue";
+
+export default {
+  components: {
+    GNB: GlobalNavigaionBar,
+  }
+}
+</script>
 
 <style>
 #app {
