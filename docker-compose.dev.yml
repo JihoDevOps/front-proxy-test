@@ -1,0 +1,45 @@
+version: "3"
+
+services:
+
+  root:
+    container_name: root
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./root
+    volumes:
+      - /app/node_modules
+      - ./root:/app
+    ports:
+      - "8080:8080"
+    stdin_open: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+
+  alpha:
+    container_name: alpha
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./alpha
+    volumes:
+      - /app/node_modules
+      - ./alpha:/app
+    ports:
+      - "8081:8081"
+    stdin_open: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+
+  beta:
+    container_name: beta
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./beta
+    volumes:
+      - /app/node_modules
+      - ./beta:/app
+    ports:
+      - "8082:8082"
+    stdin_open: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true

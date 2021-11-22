@@ -1,3 +1,7 @@
 module.exports = {
-  // publicPath: "alpha",
+  // publicPath: process.env.NODE_ENV === "production" ? "/" : "alpha",
+  devServer: {
+    disableHostCheck: true,
+    port: 8081,
+  },
 };
